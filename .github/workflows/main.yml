@@ -13,19 +13,19 @@ jobs:
  
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
       - run: mkdir runner
       - name: Setup App
         working-directory: ./runner
         run: |
              if [ "$RUNNER_OS" == "Linux" ]; then
                   echo 'LINUX'
+                  echo 'Node Version'
+                  node -v
                   sleep 30
              else
                   echo 'MACOS'
+                  echo 'Node Version'
+                  node -v
                   sleep 30
              fi
         shell: bash
